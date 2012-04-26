@@ -1,2 +1,3 @@
 build/*
 *~
+get/node_modules/*

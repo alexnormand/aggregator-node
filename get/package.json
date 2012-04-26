@@ -1,0 +1,10 @@
+{
+  "author": "Alex Normand",
+  "name": "Aggregator",
+  "description": "A quote site aggregator",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~2.5.9",
+    "jsdom": "~0.2.14"
+  }
+}
