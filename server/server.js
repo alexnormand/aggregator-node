@@ -11,7 +11,7 @@ var opts = {
 
 
 app.configure(function() {
-    ['img', 'css', 'js', 'get'].forEach(function(dir) {
+    ['img', 'css', 'js', 'server'].forEach(function(dir) {
       app.use('/' + dir, staticDir(opts.baseDir + dir));
     });
     app.use(express.bodyParser());
@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 });
 
 
-app.get('/get/:quotesite', function(req, res) {
+app.get('/server/:quotesite', function(req, res) {
     res.json('quotesite');
 });
 
