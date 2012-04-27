@@ -1,11 +1,11 @@
 Build instructions
 ===================
 
-  1. `$ git clone git://github.com/alexnormand/aggregator-node.git`  
-  2. `$ cd aggregator-node/server`  
-  3. `$ npm intstall`  
-  4. `$ node server.js`  
-  5. open [http://localhost:3000/](http://localhost:3000/) in your browser
+    $ git clone git://github.com/alexnormand/aggregator-node.git
+    $ cd aggregator-node/server
+    $ npm intstall
+    $ node server.js
+ open [http://localhost:3000/](http://localhost:3000/) in your browser
 
 
 
