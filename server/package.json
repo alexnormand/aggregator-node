@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "~2.5.9",
-    "jsdom": "~0.2.14"
+    "jsdom": "~0.2.14",
+    "request": "~2.9.202"
   }
 }

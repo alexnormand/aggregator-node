@@ -1,6 +1,6 @@
 {
    "fmylife"   : {
-       "feedurl" : "http://feeds2.feedburner.com/fmylife",
+       "feedurl" : "http://feeds2.feedburner.com/fmylife?format=xml",
        "site": "Fuck My Life",
        "entrytag": "entry",
        "datetag": "published",
@@ -8,15 +8,15 @@
        "urltag":"id"
    },      
    "tfln"      : {
-       "feedurl": "http://feeds.feedburner.com/tfln",
+       "feedurl": "http://feeds.feedburner.com/tfln?format=xml",
        "site": "Texts From last night",
        "entrytag":"item",
        "datetag": "pubDate",
        "contenttag": "description",
-       "urltag":"origLink"
+       "urltag":"feedburner\\:origLink"
    },
     "mlia"      :  {
-	"feedurl": "http://feeds.feedburner.com/mlia",
+	"feedurl": "http://feeds.feedburner.com/mlia?format=xml",
 	"site": "My Life Is Average",
 	"entrytag":"item",
 	"datetag": "pubDate",
@@ -25,30 +25,31 @@
    },
 
    "dtc"       :  {
-       "feedurl": "http://feeds.feedburner.com/bashfr",
+       "feedurl": "http://feeds.feedburner.com/bashfr?format=xml",
        "offset": 3,
        "site": "Dans ton chat",
        "entrytag": "item",
        "datetag": "pubDate",
        "contenttag": "description",
-       "urltag":"origLink"
+       "urltag": "feedburner\\:origLink"
    },
    "pebkac"    :  {
-       "feedurl": "http://feeds.feedburner.com/Pebkacfr",
+       "feedurl": "http://feeds.feedburner.com/Pebkacfr?format=xml",
        "site": "PEBKAC",
        "entrytag":"item",
        "datetag": "pubDate",
        "contenttag": "description",
-       "urltag":"origLink"
+       "urltag": "feedburner\\:origLink",
+       "encoding": "ISO-8859-1"
    },
    "viedemerde":  {
-       "feedurl": "http://feeds.feedburner.com/viedemerde",
+       "feedurl": "http://feeds.feedburner.com/viedemerde?format=xml",
        "site": "Vie de merde",
        "entrytag":"entry",
        "authortag": "author",
        "datetag": "published",
        "contenttag": "content",
-       "urltag":"origLink"
+       "urltag":"feedburner\\:origLink"
    }
 }
 
