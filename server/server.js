@@ -27,7 +27,7 @@ app.get('/server/:sitename', function(req, res) {
         parser.parseQuoteSiteFeed(quotesite, function(json) {            
             res.charset = quotesite.encoding || 'utf-8';
             res.json(json, {
-                maxAge: 7*60
+                'Cache-Control': 'max-age=420'
             });
         });
     });
