@@ -33,6 +33,6 @@ app.get('/server/:sitename', function(req, res) {
     });
 });
 
-app.listen(opts.port);
+app.listen(process.env['app_port']||opts.port);
 
 
