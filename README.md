@@ -1,5 +1,4 @@
-A quotesite aggregator (powered by Backbone.js, jQuery, Twitter Bootstrap, 
-Silex, Goutte)
+A quotesite aggregator (powered by Backbone.js, jQuery, Twitter Bootstrap, Node.js, express, jsdom)
 
 [http://aggregator.nodester.com](http://aggregator.nodester.com)
 
