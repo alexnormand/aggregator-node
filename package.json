@@ -1,5 +1,12 @@
 {
-  "name":"aggregator",
-  "node":"0.6.12",
-  "author":"alexnormand"
+  "name": "aggregator",
+    
+  "author": "Alex Normand",
+  "version": "0.0.1",
+  "description": "A quote site aggregator",
+  "dependencies": {
+    "request": "~2.9.202",
+    "jsdom": "~0.2.14",
+    "express": "~2.5.9"
+  }
 }
