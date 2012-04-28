@@ -1,6 +1,6 @@
 {
   "name": "aggregator",
-    
+  "node":"0.6.12",    
   "author": "Alex Normand",
   "version": "0.0.1",
   "description": "A quote site aggregator",
