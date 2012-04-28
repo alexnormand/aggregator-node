@@ -14,7 +14,7 @@
         <!--Source CSS dir-->
         <property name="src.css.dir" value="${basedir}/css"/>
 	<!-- Server side source code-->
-        <property name="src.serverside.dir" value="${basedir}/get"/>
+        <property name="src.serverside.dir" value="${basedir}/server"/>
         <!--r.js optimization dir-->
         <property name="r.node" value="${user.home}/tools/r.js"/>
 	<property name="app.build.js" value="${basedir}/js/app-build.js" />
@@ -43,7 +43,7 @@
         <mkdir dir="${build.dir}/js"/>
         <mkdir dir="${build.dir}/css"/>
         <mkdir dir="${build.dir}/img"/>
-	<mkdir dir="${build.dir}/get" />
+	<mkdir dir="${build.dir}/server" />
         
         <!--Log the build timestamps to file
         <echo file="${build.dir}/js/tstamp.txt" append="false">Build Date: ${TODAY}</echo>
@@ -61,6 +61,7 @@
       <echo>Compressed index.html</echo>
       <copy file="${basedir}/apple-touch-icon.png" todir="${build.dir}" />
       <copy file="${basedir}/favicon.ico" todir="${build.dir}" />
+      <copy file="${basedir}/package.json" todir="${build.dir}" />
       <copy todir="${build.dir}/img">
 	<fileset dir="${basedir}/img" />
       </copy>
@@ -77,10 +78,9 @@
     <!-- Server side code -->
     <target name="-copy.serverside"
 	    description="Copies serverside code to build dir">
-      <copy todir="${build.dir}/get">
+      <copy todir="${build.dir}/server">
 	  <fileset dir="${src.serverside.dir}" excludes="." />
       </copy>    
-      <copy file="${src.serverside.dir}/.htaccess"  todir="${build.dir}/get"/>	
       <echo>Copied server side code</echo>
     </target>
 
