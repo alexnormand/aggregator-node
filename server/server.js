@@ -1,6 +1,6 @@
 var express   = require('express'),
     fs        = require('fs'),
-    staticDir = express['static'],
+    gzippo    = require('gzippo'),
     parser    = require(__dirname + '/parser.js'),
     app       = express.createServer(),
     opts = {
@@ -10,7 +10,7 @@ var express   = require('express'),
 
 app.configure(function() {
     ['img', 'css', 'js', 'server'].forEach(function(dir) {
-      app.use('/' + dir, staticDir(opts.baseDir + dir));
+	app.use('/' + dir, gzippo.staticGzip(opts.baseDir + dir));
     });
     app.use(express.bodyParser());
 });
@@ -24,7 +24,7 @@ app.get('/server/:sitename', function(req, res) {
         var quotesites = JSON.parse(data),
             quotesite  = quotesites[req.params.sitename];
 
-        parser.parseQuoteSiteFeed(quotesite, function(json) {            
+        parser.parseQuoteSiteFeed(quotesite, function(json) {
             res.charset = quotesite.encoding || 'utf-8';
             res.json(json, {
                 'Cache-Control': 'max-age=420'
