@@ -17,7 +17,7 @@ define([
 	
 	render: function() {	    
 	    $.ajax({
-		url: 'server/sites.json', 
+		url: 'get/sites.json', 
 		dataType: 'json',
 		context: this,
 		success: function(sites) {

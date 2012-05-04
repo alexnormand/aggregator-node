@@ -9,9 +9,11 @@ var express   = require('express'),
     };
 
 app.configure(function() {
-    ['img', 'css', 'js', 'server'].forEach(function(dir) {
-	app.use('/' + dir, gzippo.staticGzip(opts.baseDir + dir));
+
+    ['img', 'css', 'js'].forEach(function(dir) {
+	      app.use('/' + dir, gzippo.staticGzip(opts.baseDir + dir));
     });
+    app.use('/get', gzippo.staticGzip(__dirname));
     app.use(express.bodyParser());
 });
 
@@ -19,7 +21,7 @@ app.get('/', function(req, res) {
     fs.createReadStream(opts.baseDir + 'index.html').pipe(res);
 });
 
-app.get('/server/:sitename', function(req, res) {
+app.get('/get/:sitename', function(req, res) {
     fs.readFile(__dirname + '/sites.json', function (err, data) {
         var quotesites = JSON.parse(data),
             quotesite  = quotesites[req.params.sitename];
@@ -33,6 +35,6 @@ app.get('/server/:sitename', function(req, res) {
     });
 });
 
-app.listen(process.env['app_port']||opts.port);
+app.listen(process.env['app_port'] || opts.port);
 
 
