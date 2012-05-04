@@ -8,6 +8,10 @@ var express   = require('express'),
         baseDir: __dirname + '/../'
     };
 
+
+var quotesites = JSON.parse(fs.readFileSync(__dirname + '/sites.json'));
+
+
 app.configure(function() {
 
     ['img', 'css', 'js'].forEach(function(dir) {
@@ -17,20 +21,32 @@ app.configure(function() {
     app.use(express.bodyParser());
 });
 
+// sitename preconditions (e.g.: sitename === ^(tfln|mlia|fmylife)$
+app.param('sitename', function(req,res, next, sitename) {
+    var regex = new RegExp('^(' + Object.keys(quotesites).join('|') + ')$', 'g');
+
+    if (regex.test(sitename)) {
+        next();
+    } else {
+        next(new Error(sitename + ' does not exist!'));
+    }
+
+});
+          
+
+// Routes
+
 app.get('/', function(req, res) {
     fs.createReadStream(opts.baseDir + 'index.html').pipe(res);
 });
 
 app.get('/get/:sitename', function(req, res) {
-    fs.readFile(__dirname + '/sites.json', function (err, data) {
-        var quotesites = JSON.parse(data),
-            quotesite  = quotesites[req.params.sitename];
+    var quotesite = quotesites[req.params.sitename];
 
-        parser.parseQuoteSiteFeed(quotesite, function(json) {
-            res.charset = quotesite.encoding || 'utf-8';
-            res.json(json, {
-                'Cache-Control': 'max-age=420'
-            });
+    parser.parseQuoteSiteFeed(quotesite, function(json) {
+        res.charset = quotesite.encoding || 'utf-8';
+        res.json(json, {
+            'Cache-Control': 'max-age=420'
         });
     });
 });
