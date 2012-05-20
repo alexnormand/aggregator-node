@@ -1,15 +1,13 @@
-var express   = require('express'),
-    fs        = require('fs'),
-    gzippo    = require('gzippo'),
-    parser    = require(__dirname + '/parser.js'),
-    app       = express.createServer(),
+var express    = require('express'),
+    fs         = require('fs'),
+    gzippo     = require('gzippo'),
+    parser     = require(__dirname + '/parser.js'),
+    quotesites = require(__dirname + '/sites.json'),
+    app        = express.createServer(),
     opts = {
         port: 3000,
         baseDir: __dirname + '/../'
     };
-
-
-var quotesites = JSON.parse(fs.readFileSync(__dirname + '/sites.json'));
 
 
 app.configure(function() {
