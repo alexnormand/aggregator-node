@@ -39,7 +39,7 @@
        "entrytag":"item",
        "datetag": "pubDate",
        "contenttag": "description",
-       "urltag": "feedburner\\:origLink",
+       "urltag": "link",
        "encoding": "ISO-8859-1"
    },
    "viedemerde":  {
