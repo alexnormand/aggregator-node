@@ -49,6 +49,8 @@ app.get('/get/:sitename', function(req, res) {
     });
 });
 
-app.listen(process.env['app_port'] || opts.port);
+app.listen(process.env['app_port'] || opts.port, function() {
+    console.log("Express server listening on port %d", app.address().port);
+});
 
 
