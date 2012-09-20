@@ -4,7 +4,7 @@ define(['backbone', 'models/quote'], function(Backbone, Quote) {
 	model : Quote,
 
 	initialize: function(models, options) {
-	    this.url = 'server/' + options.sitename;
+	    this.url = 'get/' + options.sitename;
 	}
     });
     
