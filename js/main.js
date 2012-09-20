@@ -12,13 +12,13 @@ require.config({
 });
 
 require(
-    ['order!jquery',     
+    ['order!jquery',
      'order!underscore',
-     'order!backbone', 
+     'order!backbone',
      'order!routers/router',
      'fastclick',
-     'order!bootstraptransition', 
-     'order!bootstrapcollapse'], 
+     'order!bootstraptransition',
+     'order!bootstrapcollapse'],
     function ($, _, Backbone, Router, FastClick) {
 
 	var router = new Router;
@@ -26,8 +26,8 @@ require(
 
 	//Add FastClick for native-like tapping on smartphones
 	new FastClick(document.body);
-	
+
 	if(!window.location.hash)
-	    router.navigate('/', true);	
-		
+	    router.navigate('/', true);
+
     });
