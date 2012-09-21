@@ -47,7 +47,9 @@ body {
     line-height: 18px;
     color: #333;
     background: #F2F0F0;
-    margin: 0;
+    margin: 0;   
+    height: 100%;
+    position: relative;
 }
 
 .titlequote {
@@ -1098,14 +1100,27 @@ button.btn.small,input[type="submit"].btn.small {
     visibility: hidden;
 }
 
+.span8.site-box {
+    height: auto;
+}
+
 .site-box {
     margin-bottom: 5px;
     padding: 10px;
+    height: 420px;
+}
+
+
+.footerAbsolute footer {
+    position: absolute;
+    bottom: 0;
+    
 }
 
 footer {
     overflow: hidden;
     color: #f6f9fb;
+    clear: both;
     background: #2C2C2C;
     font-size: 14px;
     padding-bottom: 20px;
@@ -1114,11 +1129,11 @@ footer {
     -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
     box-shadow: 0 0 3px rgba(0,0,0,0.25);
     background-image: radial-gradient(center,ellipsecover,#4960200,#3B4D19100%);
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333;    
 }
 
 footer .footer-content {
-    margin-left: 52px;
+    margin: 0 52px;
 }
 
 footer .center {
@@ -1254,6 +1269,22 @@ h4 small,h5 {
     p {
         font-size: 15px;
     }
+
+    footer .footer-content {
+        margin: 0 20px;
+    }
+
+    footer .left {
+        float: none;
+        width: 90%;
+    }
+    
+    footer .right {
+        float: none;
+        width: 70%;
+        margin-top: 20px;        
+    }
+
 }
 
 @media (max-width:767px) {
@@ -1570,7 +1601,7 @@ h4 small,h5 {
         display: none;
     }
 
-    footer {
+    .footerAbsolute footer {
         position: static;
     }
 }
